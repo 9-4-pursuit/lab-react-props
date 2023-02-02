@@ -1,16 +1,16 @@
-export default function RecentDonations(props) {
-  const displayDonations = props.donations;
-console.log(props.donations)
+export default function RecentDonations({ donations }) {
+  
+
   return (
     <section>
       <h2>Recent Donations</h2>
       <ul>
-        {displayDonations.map((donation) => {
-         return  <li>
+        {donations.map(({ id, name, amount, caption }) => {
+         return  <li key={id}>
             <span>
-              {donation.name} donated {donation.amount}
+              {name} donated {amount}
             </span>
-            {donation.caption}
+            {caption}
           </li>;
         })}
       </ul>

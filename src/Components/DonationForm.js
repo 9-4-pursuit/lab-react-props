@@ -1,9 +1,9 @@
-export default function DonationForm(props) {
+export default function DonationForm({number}) {
   return (
     <>
     <section className="donation">
       <h3>
-        You could be donation<span className="secondary"> #{props.number}!
+        You could be donation<span className="secondary"> #{number}!
         </span>
       </h3>
       <form>
