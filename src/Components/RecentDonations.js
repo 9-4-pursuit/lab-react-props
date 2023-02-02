@@ -1,4 +1,5 @@
-export default function RecentDonations({ donations }) {
+export default function RecentDonations({ donations}) {
+ 
   return (
     <section>
   <h2>Recent Donations</h2>
