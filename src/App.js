@@ -1,6 +1,10 @@
 import React from "react";
 import TopBar from "./Components/TopBar";
 import "./App.css";
+import Progress from "./Components/Progress";
+import RecentDonations from "./Components/RecentDonations";
+import DonationForm from "./Components/DonationForm";
+
 
 const targetAmount = 1000;
 const donations = [
@@ -36,15 +40,27 @@ const donations = [
   },
 ];
 
-function App() {
+
+let totalDonate=0
+for (let donation of donations){
+  totalDonate += donation.amount;
+  console.log(totalDonate)
+}
+
+
+function App(props) {
   return (
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
+        <section className="sidebar">
+          {/* Recent Donations */}
+          <RecentDonations></RecentDonations>
+        </section>
         <section className="">
-          {/* Progress */}
-          {/* Donation Form */}
+          <Progress mango={totalDonate} />
+  {/* The word Progress here says Go To the Progress component. The word mango is saying go find the variable Mango in the Progress component  */}
+          <DonationForm />
         </section>
       </main>
     </>
