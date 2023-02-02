@@ -1,8 +1,7 @@
 export default function DonationForm(props) {
   return (
-    <>
     <div className="donation">
-    <h3> You could be donation <span class="secondary">#{props.donationId}!</span> </h3>
+    <h3> You could be donation <span class="secondary">#{props.id}!</span> </h3>
     <form>
       <label htmlFor="name"> Name 
       <input id="name" name="name" type="text" placeholder="Your name" />
@@ -16,7 +15,6 @@ export default function DonationForm(props) {
       <button> Donate. </button>
     </form>
     </div>
-    </>
   );
 }
 

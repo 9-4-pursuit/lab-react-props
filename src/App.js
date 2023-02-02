@@ -1,9 +1,10 @@
 import React from "react";
 import TopBar from "./Components/TopBar";
 import "./App.css";
+import DonationForm from "./Components/DonationForm";
 import Progress from "./Components/Progress";
 import RecentDonations from "./Components/RecentDonations";
-import DonationForm from "./Components/DonationForm";
+
 
 const targetAmount = 1000;
 const donations = [
@@ -39,32 +40,26 @@ const donations = [
   },
 ];
 
+let total = 0;
+
+for (let donation of donations) {
+  total += donation.amount;
+}
+
 function App() {
-
-  // for (let donation of donations) {
-  //   document.createAttribute('li');
-  // then name=donation.name example of each classname ting idk you know lol}
-  // for (let donation of donations) {
-
-  for (let donation of donations) {
-
-    const total =+ donation.amount;
-
+  
   return (
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar"> <RecentDonations donationsArray={donations} donationName={donation.name} donationAmount={donation.amount} donationCaption={donation.caption} /> </section>
-        <section className="">
-          <Progress donationTotal={total} TheTargetAmount={targetAmount} />
-          <DonationForm donationsArray={donations} donationId={donation.id} />
-          {
-          /* Donation Form; here you put what is to be seen using props* you can also just pass the entire array and play with it in the child sect*/} 
+        <section className="sidebar"> <RecentDonations donation={donations}/></section>
+        <section className="Progress">
+          <Progress theTotal={total} target={targetAmount} />
+          <DonationForm id={donations.length + 1} />
         </section>
       </main>
     </>
   );
-}
 }
 
 export default App;
