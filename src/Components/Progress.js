@@ -5,7 +5,7 @@ export default function Progress(props) {
     <section className="progress">
       <h2>
         Raised <span className="secondary">${props.amount}</span> of 
-         <span className="secondary">$1000</span>
+         <span className="secondary"> $1000</span>
       </h2>
     </section>
     </>
