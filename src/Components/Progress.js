@@ -7,7 +7,7 @@ totalDonate += donation.amount
   <section className="progress">
   <h2>
     Raised <span className="secondary">${totalDonate}</span> of
-    <span className="secondary"> $1000</span>
+    <span className="secondary"> ${props.amt}</span>
   </h2>
 </section>
 )

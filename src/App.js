@@ -49,7 +49,8 @@ function App() {
       <main className="container">
         <section className="sidebar"><RecentDonations arr={donations}/></section>
         <section className="">
-          <Progress arr = {donations}/>
+          <Progress arr = {donations}
+          amt = {targetAmount}/>
            <DonationForm amtOfDonos = {donations.length+1}/>
         </section>
       </main>
