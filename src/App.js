@@ -53,14 +53,13 @@ function App(props) {
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">
-          {/* Recent Donations */}
-          <RecentDonations></RecentDonations>
+        <section className="sidebar">          
+          <RecentDonations donations={donations}/>
         </section>
         <section className="">
           <Progress mango={totalDonate} />
-  {/* The word Progress here says Go To the Progress component. The word mango is saying go find the variable Mango in the Progress component  */}
-          <DonationForm />
+  {/* The word Progress here means Go To the Progress component. The word mango is saying go find the variable Mango in the Progress component  */}
+          <DonationForm id={donations}/>
         </section>
       </main>
     </>
