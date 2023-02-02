@@ -9,7 +9,7 @@ export default function Progress(props) {
     <section className="progress">
       <h2>
         Raised <span className="secondary">${totalDonate}</span> of
-        <span className="secondary"> $1000</span>
+        <span className="secondary"> ${props.target}</span>
       </h2>
     </section>
   );

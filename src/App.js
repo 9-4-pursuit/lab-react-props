@@ -49,7 +49,7 @@ function App(props) {
           <RecentDonations arr={donations} />
         </section>
         <section className="">
-          <Progress mango={donations} />
+          <Progress target={targetAmount} mango={donations} />
           <DonationForm id={donations} />
         </section>
       </main>
