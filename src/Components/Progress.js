@@ -3,7 +3,7 @@ export default function Progress(props) {
 
   <section className="progress">
   <h2>
-    Raised <span className="secondary">${props.mango} </span> of <span className="secondary"> $1000 </span>
+    Raised <span className="secondary">${props.mango} </span> of <span className="secondary"> ${props.targetAmount} </span>
   </h2>
 </section>
 

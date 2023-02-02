@@ -48,7 +48,7 @@ for (let donation of donations){
 }
 
 
-function App(props) {
+function App() {
   return (
     <>
       <TopBar />
@@ -57,7 +57,7 @@ function App(props) {
           <RecentDonations donations={donations}/>
         </section>
         <section className="">
-          <Progress mango={totalDonate} />
+          <Progress mango={totalDonate} targetAmount={targetAmount} />
   {/* The word Progress here means Go To the Progress component. The word mango is saying go find the variable Mango in the Progress component  */}
           <DonationForm id={donations}/>
         </section>
