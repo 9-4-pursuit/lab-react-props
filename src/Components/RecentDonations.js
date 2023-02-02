@@ -1,3 +1,7 @@
 export default function RecentDonations() {
-  return null;
+  return (
+    <div>
+        
+    </div>
+  );
 }
