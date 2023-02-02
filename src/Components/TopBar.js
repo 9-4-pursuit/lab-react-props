@@ -6,5 +6,6 @@ export default function TopBar() {
       </h1>
       <p>Help me go on a vacation to a beach somewhere!</p>
     </header>
+    
   );
 }
