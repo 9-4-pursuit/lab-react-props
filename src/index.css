@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
 :root {
-  --light: #e2e2e2;
-  --dark: #022b3a;
-  --primary: #2f9c95;
-  --secondary: #b27092;
+  --light: #eeeece;
+  --dark: #27252e;
+  --primary: #2e7403;
+  --secondary: #d4ff00;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: monospace;
   margin: 0;
   padding: 0;
 }
@@ -19,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Futura", sans-serif;
 }
 
 /* Heading */
