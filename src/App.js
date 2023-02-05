@@ -40,11 +40,13 @@ function App() {
   return (
     <>
       <TopBar />
-      <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
-        <section className="">
-          {/* Progress */}
-          {/* Donation Form */}
+      <main className='container'>
+        <section className='sidebar'>
+          <RecentDonations donations={donations} />
+        </section>
+        <section className=''>
+          <Progress donations={donations} targetAmount={targetAmount} />
+          <DonationForm donations={donations} />
         </section>
       </main>
     </>
