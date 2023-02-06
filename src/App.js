@@ -39,22 +39,20 @@ const donations = [
   },
 ];
 
-function App() {
-  let raised = 0
-  const donationsArray = donations.map((donation) => {
-    return raised += donation.amount
-  })
+let currentAmount = 0;
+for (let donation of donations) {
+  currentAmount += donation.amount;
+}
 
+function App() {
   return (
     <>
       <TopBar />
-      <main className='container'>
-        <section className='sidebar'>
-          <RecentDonations donations={donations} />
-        </section>
-        <section className=''>
-          <Progress amount={raised}/>
-          <DonationForm number={donations.length + 1}/>
+      <main className="container">
+        <section className="sidebar"><RecentDonations donations={donations}/></section>
+        <section className="Progress">
+          <Progress amount={currentAmount} target={targetAmount} />
+          <DonationForm id={donations.length + 1} />
         </section>
       </main>
     </>
