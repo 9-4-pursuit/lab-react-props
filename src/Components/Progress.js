@@ -1,3 +1,5 @@
+
+
 export default function Progress(props) {
   let amount = 0;
   for (const donation of props.donations) {
