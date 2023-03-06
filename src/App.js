@@ -1,8 +1,12 @@
 import React from "react";
 import TopBar from "./Components/TopBar";
+import DonationForm from "./Components/DonationForm";
+import Progress from "./Components/Progress";
+import RecentDonations from "./Components/RecentDonations";
 import "./App.css";
 
 const targetAmount = 1000;
+
 const donations = [
   {
     amount: 250,
@@ -36,15 +40,35 @@ const donations = [
   },
 ];
 
+
 function App() {
+
+    let total = 0; 
+    donations.forEach((donation) => {
+    return total = total + donation.amount;
+    // console.log(total)
+   })
+   
+  
+  let rate = 1 + donations.length
+
+  const donator = donations.map((donation) => {
+    return (
+    <li>
+      <span>{donation.name} donated ${donation.amount}</span>{donation.caption}
+    </li>
+    )
+  })
+
+
   return (
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
+        <section className="sidebar"><RecentDonations donator={donator} donations={donations}/></section>
         <section className="">
-          {/* Progress */}
-          {/* Donation Form */}
+          <Progress targetAmount={targetAmount} total={total}/>
+          <DonationForm rate={rate}/>
         </section>
       </main>
     </>
