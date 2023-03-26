@@ -1,6 +1,11 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import TopBar from "./Components/TopBar";
 import "./App.css";
+import DonationForm from "./Components/DonationForm";
+import Progress from "./Components/Progress";
+import RecentDonations from "./Components/RecentDonations";
+
 
 const targetAmount = 1000;
 const donations = [
@@ -36,15 +41,22 @@ const donations = [
   },
 ];
 
+let total = 0;
+
+for (let donation of donations) {
+  total += donation.amount;
+}
+
 function App() {
+  
   return (
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
-        <section className="">
-          {/* Progress */}
-          {/* Donation Form */}
+        <section className="sidebar"> <RecentDonations donation={donations}/></section>
+        <section className="Progress">
+          <Progress theTotal={total} target={targetAmount} />
+          <DonationForm id={donations.length + 1} />
         </section>
       </main>
     </>
