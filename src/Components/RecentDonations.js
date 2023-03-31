@@ -1,9 +1,21 @@
 export default function RecentDonations(props) {
+  const donations = props.donations;
+
   return (
-    <section>
-  <ul>
-    <li><span>{props.name} donated ${props.amount}</span>{props.caption}</li>
-  </ul>
-</section>
+    <>
+      <section>
+        <h2>Recent Donations</h2>
+        <ul>
+          {
+            donations.map(person => (
+                <li>
+                  <span>{person.name} donated ${person.amount}</span>
+                  {person.caption}
+                </li>
+            ))
+          }
+        </ul>
+      </section>
+    </>
   );
 }
